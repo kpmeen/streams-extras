@@ -19,7 +19,7 @@ build:
     options: "-e HOME=/root"
 
   ci:
-    - $SHIPPABLE_BUILD_DIR/pre-ci-sh
+    - $SHIPPABLE_BUILD_DIR/pre-ci.sh
     - sbt clean coverage test coverageReport
 
   post_ci:
