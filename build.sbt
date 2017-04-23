@@ -46,6 +46,8 @@ scalacOptions in Test ++= Seq("-Yrangepos")
 publishMavenStyle := true
 publishArtifact in Test := false
 
+bintrayPackageLabels := Seq("scala", "akka", "akka-streams")
+
 lazy val akkaVersion = "2.5.0"
 lazy val testVersion = "3.0.1"
 
