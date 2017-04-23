@@ -6,10 +6,6 @@ scala:
 jdk:
   - openjdk8
 
-#env:
-#  global:
-#    - secure:
-
 build:
   pre_ci_boot:
     image_name: kpmeen/docker-scala-sbt
@@ -18,9 +14,10 @@ build:
     options: "-e HOME=/root"
 
   ci:
+    - mkdir /root/.bintray
+    - /root/.bintray/.credentials
     - sbt clean coverage test coverageReport
 
   post_ci:
-    # Prepare for exporting coverage report to codacy
     - mkdir -p shippable/codecoverage
     - mv target/scala-2.11/coverage-report/cobertura.xml $PWD/shippable/codecoverage/
