@@ -24,4 +24,4 @@ build:
 
   post_ci:
     - mkdir -p shippable/codecoverage
-    - mv target/scala-2.11/coverage-report/cobertura.xml $PWD/shippable/codecoverage/
+    - mv $SHIPPABLE_BUILD_DIR/target/scala-2.11/coverage-report/cobertura.xml $PWD/shippable/codecoverage/
