@@ -15,7 +15,7 @@ build:
 
   ci:
     - mkdir /root/.bintray
-    - /root/.bintray/.credentials
+    - touch /root/.bintray/.credentials
     - sbt clean coverage test coverageReport
 
   post_ci:
