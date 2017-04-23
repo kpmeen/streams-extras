@@ -20,8 +20,8 @@ build:
 
   ci:
     - $SHIPPABLE_BUILD_DIR/pre-ci.sh
-    - sbt clean coverage test coverageReport
+    - sbt ++$SHIPPABLE_SCALA_VERSION clean coverage test coverageReport
 
   post_ci:
     - mkdir -p shippable/codecoverage
-    - mv $SHIPPABLE_BUILD_DIR/target/scala-${SCALA_VERSION%??}/coverage-report/cobertura.xml $PWD/shippable/codecoverage/
+    - mv $SHIPPABLE_BUILD_DIR/target/scala-${SHIPPABLE_SCALA_VERSION%??}/coverage-report/cobertura.xml $PWD/shippable/codecoverage/
