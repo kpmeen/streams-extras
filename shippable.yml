@@ -6,6 +6,11 @@ scala:
 jdk:
   - openjdk8
 
+env:
+  global:
+    - secure: KKdZIZcne5XiLvHBOq/FoS0jXxOCNK1ETkJXiuWBadobQsZS+wWxs9DMTQE3RUvbvayAXYlW6JUDMyNYWGD4dzYUUboI0aG8lgrt62vmHkQqSQ55vQtZOudsfGGOoX5PgPm8ti3iqkuO8t1gi15n5EH/8Rvp80H0YTPvftx7PXoiToj9/MvTLYltD1w+JIUZBb1NVck6dJf4yv/4VCMF4798asrLFIeL6QXOMpttSHAc2DtbRdTxUDFDa7wLWMMoQDqZDdUR4aJU6xAdoYO1voyv+D7tlZZZM8O/hAcY4NM0ki/9FuDwCP3/ES0//Ahg5IB+Lbk7XnwEGeWbQsXACA==
+    - secure: Vw+rmJi8cPzDvhFaYde+x+BNmrLKWoZS14hRk2bSWoX5mxj4YJ5mDGFRvKFU+g+1tibA3g85eMz6iMIcGCC8O9kEVrbJvC1oclfXgL6g+IITdvSE+Eyz5YIhOz3cYQhyB/RlqTaxmBcfheQQoB3z8ki8/c73jbZ1TH1Xmw/gs1G78l+6IpToZGRSxmAOSHOM9i+S7o+zsCpPQgozw+kkwyyxB24Hj/ppgvtAWx1oeenX0mxuip91eG+arch0+b8S/LMtWziEhmv07KANyyQtd3lhY1XgnHbIyQ7ivTVBs+pEc8tDT22OAAiZEfo1abmlbrMz94HjP5Z8zI/ieqZWOg==
+
 build:
   pre_ci_boot:
     image_name: kpmeen/docker-scala-sbt
@@ -14,8 +19,7 @@ build:
     options: "-e HOME=/root"
 
   ci:
-    - mkdir /root/.bintray
-    - touch /root/.bintray/.credentials
+    - ./pre-ci-sh
     - sbt clean coverage test coverageReport
 
   post_ci:
