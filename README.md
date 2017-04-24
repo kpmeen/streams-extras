@@ -8,3 +8,22 @@
 A library consisting of some extra helpers for akka-streams. The idea
 is that the library will grow in size (and hopefully usefulness) as time
 goes by.
+
+
+# Usage
+
+Add the dependency for `streams-extras` to your `build.sbt`:
+
+```scala
+resolvers += Resolver.jcenterRepo
+
+libraryDependencies += "net.scalytica" %% "streams-extras" % "0.1"
+```
+
+Or you can clone the repository and build from source.
+
+
+# Contributing
+
+Any contributions are very welcome in the form of PR's. If you have any
+suggestions to improvements or new features, feel free to create an issue!
