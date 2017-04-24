@@ -22,7 +22,7 @@ pomExtra := (
 )
 
 scalaVersion := "2.12.1"
-crossScalaVersions := Seq("2.12", "2.11")
+crossScalaVersions := Seq("2.12.1", "2.11.8")
 
 scalacOptions ++= Seq(
   "-deprecation",
