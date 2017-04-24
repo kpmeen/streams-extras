@@ -10,12 +10,12 @@ import akka.stream.stage.{GraphStage, GraphStageLogic, InHandler, OutHandler}
  * collected up to that point. The buffer is then reset and starts keeping track
  * of the next set of {{{A}}}'s.
  *
- * @note This implementation assumes that the incoming stream is pre-sorted.
+ * An example where this implementation can be useful is; when you have
+ * a streaming data source (from e.g. Slick 3), where the query is a
+ * {{{LEFT OUTER JOIN}}}, and you want to group all the rows with the
+ * same ID.
  *
- * @usecase An example where this implementation can be useful is; when you have
- *          a streaming data source (from e.g. Slick 3), where the query is a
- *          {{{LEFT OUTER JOIN}}}, and you want to group all the rows with the
- *          same ID.
+ * @note This implementation assumes that the incoming stream is pre-sorted.
  *
  * @param extractProp Function to extract the property used for comparing A's
  * @tparam A The type of elements passing through the stream
