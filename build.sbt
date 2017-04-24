@@ -46,7 +46,6 @@ publishMavenStyle := true
 publishArtifact in Test := false
 releaseCrossBuild := true
 
-bintrayReleaseOnPublish in ThisBuild := false
 bintrayPackageLabels := Seq("scala", "akka", "akka-streams")
 
 lazy val akkaVersion = "2.5.0"
