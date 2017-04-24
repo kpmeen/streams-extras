@@ -21,7 +21,7 @@ import akka.stream.stage.{GraphStage, GraphStageLogic, InHandler, OutHandler}
  * @tparam A The type of elements passing through the stream
  * @tparam B The type of the property used to compare A's
  *
- * @see [[akka.stream.stage.GraphStage]]
+ * @see [[http://doc.akka.io/api/akka/2.5/akka/stream/stage/GraphStage.html]]
  */
 final class GroupSortedBySameProp[A, B](
     extractProp: A => B

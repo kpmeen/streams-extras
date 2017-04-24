@@ -1,6 +1,5 @@
 name := "streams-extras"
 organization := "net.symbiotic"
-version := "0.1-SNAPSHOT"
 
 licenses := Seq(
   "Apache-2.0" -> url("http://www.apache.org/licenses/LICENSE-2.0.html")
