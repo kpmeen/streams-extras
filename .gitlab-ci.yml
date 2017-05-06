@@ -1,0 +1,25 @@
+######################################################################
+# GitLab CI build script for the Symbiotic project                   #
+######################################################################
+image: kpmeen/docker-scala-sbt
+
+variables:
+  DOCKER_DRIVER: overlay
+
+stages:
+  - test
+
+test:
+  stage: test
+  script:
+    - mkdir ~/.bintray
+    - cp project/.fake_creds ~/.bintray/.credentials
+    - echo "realm = fi" >> /root/.bintray/.credentials
+    - echo "host = fa" >> /root/.bintray/.credentials
+    - echo "user = fum" >> /root/.bintray/.credentials
+    - echo "password = foobarbaz" >> /root/.bintray/.credentials
+
+    # Execute CI script
+    - sbt clean coverage test coverageReport
+    # Check if scalafmt modified any files during the build. If yes, fail the build.
+    - git diff --exit-code || (echo "ERROR code formatting check failed, see differences below."; false)
