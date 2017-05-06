@@ -13,7 +13,6 @@ test:
   stage: test
   script:
     - mkdir ~/.bintray
-    - cp project/.fake_creds ~/.bintray/.credentials
     - echo "realm = fi" >> /root/.bintray/.credentials
     - echo "host = fa" >> /root/.bintray/.credentials
     - echo "user = fum" >> /root/.bintray/.credentials
